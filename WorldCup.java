@@ -37,14 +37,28 @@ public class WorldCup
      * @params: the number of groups, teams, and players per team respectively.
      * @return    void
      */
-    public void worldCupSetup(int numberOfGroups, int numberOfTeams, int numberOfPlayersPerTeam)
+    public void worldCupSetup()
     {
-    
+        int numberOfPlayersPerTeam = 23;
+        int numberOfTeamsPerGroup = 4;
+        int numberOfGroups = 6;
+        String [] countryNamesArray = {"Canada","United States","Mexico","Qatar","Russia","Brazil","South Africa","Germany","Japan","South Korea","Spain","Argentina","England","Chile","Sweden",
+            "Switzerland","France","Italy","Denmark","Belgium","Croatia","Serbia","Netherlands","Portugal"};
+        
+        ArrayList<String> countryNamesList = new ArrayList<String>(); 
+         for(String country: countryNamesArray){
+            countryNamesList.add(country);
+             System.out.println(country);
+        }
+        
+        
+        
         for(int i = 0; i < numberOfGroups; i++){
             Group tempGroup = new Group(numberOfGroups + 1);
-            for(int j = 0; j < numberOfTeams; j++){
+            for(int j = 0; j < numberOfTeamsPerGroup; j++){
                 int currentTeamNumber = j + 1;
-                String currentTeamName = "Team " + Integer.toString(currentTeamNumber);
+                String tempCountryName = countryNamesList.get(0);
+                String currentTeamName = "Team " + Integer.toString(currentTeamNumber) + ": " + tempCountryName;
                 int currentCoachNumber = currentTeamNumber;
                 String currentCoachName = "Coach " + Integer.toString(currentTeamNumber);
                 Coach tempCoach = new Coach(currentCoachName, currentCoachNumber);
@@ -57,8 +71,10 @@ public class WorldCup
                 }
                 tempGroup.addTeam(tempTeam);
                 
+                countryNamesList.remove(0);
                 
-            }
+                
+            
             this.addGroup(tempGroup);
             
             
@@ -66,3 +82,6 @@ public class WorldCup
         }
     }
 }
+}
+
+
