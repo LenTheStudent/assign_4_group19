@@ -13,6 +13,7 @@ public class Team
     private int teamNumber;
     private ArrayList<Player> players;
     private Coach coach;
+    private int points;
     
 
     /**
@@ -25,6 +26,7 @@ public class Team
         this.teamNumber = teamNumber;
         this.coach = coach;
         this.players = new ArrayList<Player>(); 
+        this.points = points;
     }
 
     /**
@@ -49,6 +51,32 @@ public class Team
         // put your code here
         return teamNumber;
     }
+     /**
+      * This method returns the points of the team
+      * 
+      * 
+      * @return    the total points for the team
+      */
+    public int getPoints()
+    {
+        return points;
+    }
+    /**
+     * This method updates the points for a team
+     *
+     * 
+     * @param    a score object
+     */
+    public void updatePoints(int scoreFor, int scoreAgainst)
+    {
+        if (scoreFor > scoreAgainst) {
+                points += 3;
+        }
+        if (scoreFor == scoreAgainst) {
+            points++;
+        }
+        points += 0.1*scoreFor;
+        }
      /**
      * This method adds a player object to the Team.
      *
