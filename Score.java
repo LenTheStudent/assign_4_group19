@@ -1,4 +1,4 @@
-
+import java.util.Random;
 /**
  * Write a description of class Score here.
  *
@@ -8,26 +8,30 @@
 public class Score
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int scoreFor;
+    private int scoreAgainst;
+    private Random random;
 
     /**
      * Constructor for objects of class Score
      */
     public Score()
     {
-        // initialise instance variables
-        x = 0;
+        this.scoreFor = scoreFor;
+        this.scoreAgainst = scoreAgainst;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method that creates a result for a match
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param     home - the home team
+     *            away - the away team
      */
-    public int sampleMethod(int y)
+    public void result(Team home, Team away)
     {
-        // put your code here
-        return x + y;
+        scoreFor = random.nextInt(10);
+        scoreAgainst = random.nextInt(10);
+        home.updatePoints(scoreFor, scoreAgainst);
+        away.updatePoints(scoreAgainst, scoreFor);
     }
 }
