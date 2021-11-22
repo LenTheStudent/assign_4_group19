@@ -70,10 +70,15 @@ public class Group
      */
     public void calculateRanking()
     {
-        for (Team i : teams) {
-            System.out.println("1: Team " + i.getTeamNumber() + ", " + i.getPoints() + " points.");
+        int i = 0;
+        Team temp = null;
+        while (i < teams.size()) {
+            temp = teams.get(i);
+            System.out.println(temp.getTeamName() + ", " + temp.getPoints() + " points.");
+            i++;
         }
     }
+    
     public void randomMatches(){
         Random random = new Random();
         for(int i = 0; i < 30; i++){
