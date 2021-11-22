@@ -1,7 +1,9 @@
 import java.util.ArrayList;
+import java.util.Random;
+
 
 /**
- * Write a description of class Group here.
+ * This group
  *
  * @author (your name)
  * @version (a version number or a date)
@@ -33,6 +35,16 @@ public class Group
         // put your code here
         teams.add(team); 
     }
+    /**
+     * This exposes the the teams ArrayList
+     *
+     * 
+     * @return  an ArrayList of team objects
+     */
+    public ArrayList<Team> returnTeams()
+    {
+        return this.teams;
+    }
      /**
      * @return    Group's number as an int
      */
@@ -61,5 +73,18 @@ public class Group
         for (Team i : teams) {
             System.out.println("1: Team " + i.getTeamNumber() + ", " + i.getPoints() + " points.");
         }
+    }
+    public void randomMatches(){
+        Random random = new Random();
+        for(int i = 0; i < 30; i++){
+            int randIdxOne = random.nextInt(teams.size()-1);
+            int randIdxTwo = random.nextInt(teams.size()-1);
+            Team teamOne = teams.get(randIdxOne);
+            Team teamTwo = teams.get(randIdxTwo);
+            this.addMatch(teamOne, teamTwo); 
+           
+            
+        }
+        
     }
 }

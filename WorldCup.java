@@ -18,6 +18,7 @@ public class WorldCup
     {
         // initialise instance variables
         this.groups = new ArrayList<Group>();
+        
     }
     /**
      * Add a group object to the groups ArrayList
@@ -29,6 +30,16 @@ public class WorldCup
     {
         // put your code here
         groups.add(group); 
+    }
+    /**
+     * This exposes the the groups ArrayList
+     *
+     * 
+     * @return    an ArrayList of group objects
+     */
+    public ArrayList<Group> returnGroups()
+    {
+        return this.groups;
     }
 
     /**
@@ -58,7 +69,7 @@ public class WorldCup
             for(int j = 0; j < numberOfTeamsPerGroup; j++){
                 int currentTeamNumber = j + 1;
                 String tempCountryName = countryNamesList.get(0);
-                String currentTeamName = "Team " + Integer.toString(currentTeamNumber) + ": " + tempCountryName;
+                String currentTeamName = tempCountryName;
                 int currentCoachNumber = currentTeamNumber;
                 String currentCoachName = "Coach " + Integer.toString(currentTeamNumber);
                 Coach tempCoach = new Coach(currentCoachName, currentCoachNumber);
@@ -81,6 +92,7 @@ public class WorldCup
             
         }
     }
+    
 }
 }
 
