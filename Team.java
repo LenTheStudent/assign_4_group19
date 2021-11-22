@@ -13,7 +13,7 @@ public class Team
     private int teamNumber;
     private ArrayList<Player> players;
     private Coach coach;
-    private int points;
+    private float points;
     
 
     /**
