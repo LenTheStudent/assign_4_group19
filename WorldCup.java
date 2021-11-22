@@ -41,6 +41,16 @@ public class WorldCup
     {
         return this.groups;
     }
+    /**
+     * This allows you to access groups by index.
+     *
+     * 
+     * @return    a group object at given index
+     */
+    public Group returnGroup(int index)
+    {
+        return this.groups.get(index);
+    }
 
     /**
      * This method creates players, teams, and groups, and saves them in the WorldCup.groups ArrayList.

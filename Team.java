@@ -51,6 +51,16 @@ public class Team
         // put your code here
         return teamNumber;
     }
+    /**
+     * This exposes the the players ArrayList
+     *
+     * 
+     * @return  an ArrayList of player objects
+     */
+    public ArrayList<Player> getPlayers()
+    {
+        return this.players;
+    }
      /**
       * This method returns the points of the team
       * 
