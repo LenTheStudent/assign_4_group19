@@ -19,6 +19,7 @@ public class Score
     {
         this.scoreFor = scoreFor;
         this.scoreAgainst = scoreAgainst;
+        this.random = new Random();
     }
 
     /**
@@ -31,6 +32,7 @@ public class Score
     {
         scoreFor = random.nextInt(10);
         scoreAgainst = random.nextInt(10);
+        System.out.println(home.getTeamName() + ": " + scoreFor + " - " + away.getTeamName() + ": " + scoreAgainst);
         home.updatePoints(scoreFor, scoreAgainst);
         away.updatePoints(scoreAgainst, scoreFor);
     }
