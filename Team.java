@@ -67,7 +67,7 @@ public class Team
       * 
       * @return    the total points for the team
       */
-    public int getPoints()
+    public float getPoints()
     {
         return points;
     }
